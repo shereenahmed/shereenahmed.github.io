@@ -112,6 +112,21 @@ img:hover {
   font-family: Arial;
   color: #cc6600;
 }
+h5{
+  font-family: Arial;
+  font-weight: bolder;
+  color: #804000;
+  text-align: left;
+  text-decoration: underline;
+}
+
+h6{
+ font-family: Arial;
+ font-weight: lighter;
+ color: #cc6600;
+ text-align: left;
+}
+
 
 .footer {
   display: inline-block;
