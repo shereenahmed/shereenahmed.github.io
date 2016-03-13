@@ -1,12 +1,11 @@
  body {
   background-image: url("http://static1.squarespace.com/static/5266b504e4b0547c6f2862be/t/54ee0009e4b0d577cb6e9838/1424883725336/Fine+Art+Film+Photographer+-+Baking+-+Linzer+Cookies");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: fixed;
-    background-size: 89em;
-    
+    background-size: 89em; 
 }
 
-.header {
+#info-page{
   font-size: 1.5em;
   color: #ff3300;
   font-family: Helvetica; 
@@ -16,7 +15,6 @@
   padding-right: 2em;
   margin-top: -1.3em;
   opacity: .5;
-
 }
 
 #info {
@@ -28,21 +26,16 @@
   margin-top:  -1.7em;
   padding-left: 1em;
   line-height: 1.4;
-
 }
 
 span {
   font-size: 1.2em;
-  
-  
 }
 
 img {
   width: 26em;
   height: 20em;
   margin-left: 5em;
-
-
 }
 
 .blueberry{
@@ -51,33 +44,32 @@ img {
   width: 100%;
   height: 100%;
   background-image: url("https://s-media-cache-ak0.pinimg.com/564x/0b/2c/38/0b2c384b0e930824887f799fe842c836.jpg");
+  background-repeat: repeat;
    }
 
-.header2{
+.bake {
   display: inline-block;
   background-color: #ffffff;
   border: 1em;
   border-radius:4%;
   width: 90%;
+  height: 70px;
   border-color: #ffccff;
   opacity: 0.8;
   margin-top: 2em;
   margin-left: 3em;
-  box-shadow: 0.5em 0.5em #ffb3b3; 
-
-
+  box-shadow: 0.5em 0.5em #ffb3b3;
  }
 
- .header2 > #head1 {
+ .bake > #head1 {
     float: left;
-    font-size: 2.2em;
+    font-size: 2em;
     font-variant: small-caps;
     color:  #ff1a1a;
     margin-left: 2em;
-
  }
 
- .header2 > a{
+ .bake > a{
    text-decoration: none;
    font-style: oblique;
    font-weight: bold;
@@ -88,7 +80,7 @@ img {
    margin-right: 2.5em;
  }
 
- .header2 > a:hover{
+ .bake > a:hover{
   text-decoration: none;
   font-weight: bolder;
   font-size: 1em;
@@ -106,16 +98,14 @@ img {
   text-align: center;
   width: 25%;
   padding: 0.4em;
-
  }
  
- #time, .portion{
+ #time, .portion, legend{
   font-family: Helvetica;
   font-size: 1em;
   font-weight: bold;
   color: #009966;
  }
-
 
  .ingredients{
   float: left;
@@ -158,41 +148,62 @@ img {
 
  }
 
-#star > button{
-    display: inline-block;
-    font-size: 2em;
-    color: red;
-    float: center;
-    padding-right: -1em;
-    padding-left: -1em;
-    margin-right: 0.5em;
-    margin-left: 2em;
-    border-radius: 100%;
-    background-color: #f0f0f5;
+.rating {
+    float:left;
+    border-color: red;
+    border-radius: 1em; 
+    margin-left: 17em;
+    background-color: #ffffff;
     opacity: 0.8;
- }
-
- #star:hover > button:before {
-  content: '\2605';
-  position: absolute;
- }
-
-
-#star > button:hover ~ button:before {
-  content:'';
 }
 
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
 
-#choose{
-  font-variant: small-caps;
-  color: purple;
-  font-family: Helvetica;
-  text-align: center;
-  margin-left: 9em;
-  font-size: 0.8em;
-  float:left;
-  font-weight: bold;
-  padding-top: -8em;
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '☆ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
 }
 
 .baking {
@@ -206,7 +217,6 @@ img {
   margin-top: 1em;
   height: 58em;
   width: 50%;
-
 }
 
 .baking > h2 {
@@ -236,12 +246,13 @@ img {
   color: #80002a;
 }
 
-.footer {
+footer {
   display: inline-block;
   background-color: #ffffff;
   border: 1em;
   border-radius:4%;
   width: 90%;
+  height: 70px;
   border-color: #ffccff;
   opacity: 0.8;
   margin-top: 1em;
@@ -267,7 +278,7 @@ img {
     margin-right: 2em;
 }
 
-.footer > a {
+footer > a {
   text-decoration: none;
 
 }
